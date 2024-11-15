@@ -43,8 +43,8 @@
                 
                 <ul style="display:flex;list-style:none; ;cursor: pointer;{% if language.code == LANGUAGE_CODE %} font-weight: bold;{% endif %}">
                     <li><a href="{% url 'set_language' %}?language=uz">Uz &nbsp;</a></li>
-                    <li><a href="{% url 'set_language' %}?language=ru">Рус &nbsp;</a></li>
                     <li><a href="{% url 'set_language' %}?language=en">Eng &nbsp;</a></li>
+                    <li><a href="{% url 'set_language' %}?language=ru">Рус &nbsp;</a></li>
                 </ul>
 
             </div>
@@ -72,7 +72,12 @@
                 <a href="#" class="navbar_nav_a">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
                 <ul class="dropdown_ul">
                   <li class="dropdown_li"><a href="{% url "news" %}">{% blocktrans %}Yangiliklar{% endblocktrans %}</a></li>
-                  <li class="dropdown_li"><a href="{% url "elon" %}">{% blocktrans %}Elonlar{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{% url "elon" %}">{% blocktrans %}E’lonlar{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{% url "video" %}">{% blocktrans %}Live{% endblocktrans %}</a></li>
+
+                  <li class="dropdown_li"><a href="{% url "ax" %}">{% blocktrans %}Axborot xizmati{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{# url "ax" #}">{% blocktrans %}Matbuot anjumanlari{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{# url "ax" #}">{% blocktrans %}Rahbariyatning bayonotlari va nutqlar{% endblocktrans %}</a></li>
                 </ul>
             </div>
               
@@ -81,7 +86,7 @@
                 <ul class="dropdown_ul">
                   <li class="dropdown_li"><a href="{% url "institut" %}">{% blocktrans %}Institut{% endblocktrans %}</a></li>
                   <li class="dropdown_li"><a href="{% url "kengash" %}">{% blocktrans %}Kengashlar{% endblocktrans %}</a></li>
-                  <li class="dropdown_li"><a href="{% url "meyoriy-hujjat" %}">{% blocktrans %}Meyoriy Hujjatlar{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{% url "meyoriy-hujjat" %}">{% blocktrans %}Me’yoriy hujjatlar{% endblocktrans %}</a></li>
                 </ul>
             </div>
               
@@ -99,11 +104,11 @@
             <div class="dropdown">
                 <a href="#" class="navbar_nav_a">{% blocktrans %}Faoliyat{% endblocktrans %}</a>
                 <ul class="dropdown_ul">
-                    <li class="dropdown_li"><a href="{% url "ilmiyFaoliyat" %}">{% blocktrans %}Ilmiy Faoliyat{% endblocktrans %}</a></li>
-                    <li class="dropdown_li"><a href="{% url "oquvFaoliyat" %}">{% blocktrans %}O'quv Faoliyat{% endblocktrans %}</a></li>
-                    <li class="dropdown_li"><a href="{% url "xalqaroFaoliyat" %}">{% blocktrans %}Xalqaro Faoliyat{% endblocktrans %}</a></li>
-                    <li class="dropdown_li"><a href="{% url "moliyaviyFaoliyat" %}">{% blocktrans %}Moliyaviy Faoliyat{% endblocktrans %}</a></li>
-                    
+                    <li class="dropdown_li"><a href="{% url "ilmiyFaoliyat" %}">{% blocktrans %}Ilmiy faoliyat{% endblocktrans %}</a></li>
+                    <li class="dropdown_li"><a href="{% url "oquvFaoliyat" %}">{% blocktrans %}O'quv faoliyat{% endblocktrans %}</a></li>
+                    <li class="dropdown_li"><a href="{% url "xalqaroFaoliyat" %}">{% blocktrans %}Xalqaro faoliyat{% endblocktrans %}</a></li>
+                    <li class="dropdown_li"><a href="{% url "moliyaviyFaoliyat" %}">{% blocktrans %}Moliyaviy faoliyat{% endblocktrans %}</a></li>
+                    <li class="dropdown_li"><a href="{% url "korupsiyaFaoliyat" %}">{% blocktrans %}Korupsiyaga qarshi kurashish{% endblocktrans %}</a></li>
                 </ul>
             </div>
 
@@ -122,11 +127,11 @@
                   <li class="dropdown_li"><a href="{% url "callCenter" %}">{% blocktrans %}CALL-CENTER{% endblocktrans %}</a></li>
                   <li class="dropdown_li"><a href="{% url "bakalavr" %}">{% blocktrans %}Bakalavr{% endblocktrans %}</a></li>
                   <li class="dropdown_li"><a href="{% url "magistr" %}">{% blocktrans %}Magistratura{% endblocktrans %}</a></li>
-                  <li class="dropdown_li"><a href="{% url "sirtqi" %}">{% blocktrans %}Sirtqi Ta'lim{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{% url "sirtqi" %}">{% blocktrans %}Sirtqi ta’lim{% endblocktrans %}</a></li>
                   <li class="dropdown_li"><a href="{% url "doktarantura" %}">{% blocktrans %}Doktorantura{% endblocktrans %}</a></li>
                   <li class="dropdown_li"><a href="{% url "xorijiyTalabalar" %}">{% blocktrans %}Xorijiy Fuqarolar{% endblocktrans %}</a></li>
-                  <li class="dropdown_li"><a href="{% url "qoshmaTalim" %}">{% blocktrans %}Qoshma Ta'lim dasturi{% endblocktrans %}</a></li>
-                  <li class="dropdown_li"><a href="{% url "ikkiMutaxasislik" %}">{% blocktrans %}2 - Mutaxassislik{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{% url "qoshmaTalim" %}">{% blocktrans %}Qo‘shma ta’lim dasturlari{% endblocktrans %}</a></li>
+                  <li class="dropdown_li"><a href="{% url "ikkiMutaxasislik" %}">{% blocktrans %}Ikkinchi mutaxassislik{% endblocktrans %}</a></li>
                   <li class="dropdown_li"><a href="{% url "texnikum" %}">{% blocktrans %}Texnikumlar{% endblocktrans %}</a></li>
                 </ul>
             </div>
@@ -148,7 +153,7 @@
             </div>
             
             <div class="dropdown">
-                <a href="http://hnt.jizpi.uz:8080/" class="navbar_nav_a">{% blocktrans %}Interaktiv xizmatmatlar{% endblocktrans %}</a>
+                <a href="http://hnt.jizpi.uz:8080/" class="navbar_nav_a">{% blocktrans %}Interaktiv xizmatlar{% endblocktrans %}</a>
             </div>
               
       </div>

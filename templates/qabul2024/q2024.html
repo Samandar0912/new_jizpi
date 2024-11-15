@@ -58,6 +58,9 @@
             
             <button type="submit" class="btn btn-lg btn-success mt-4" style='width:350px'>Jo'natish</button>
             
+             {% if request.user.is_authenticated %}
+                <a href="{% url 'q2024list' %}" class="btn btn-lg btn-danger mt-4" style="width:350px">{% blocktrans %}Natija{% endblocktrans %}</a>
+            {% endif %}
         </form>
         
     

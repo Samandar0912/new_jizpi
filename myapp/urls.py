@@ -9,6 +9,7 @@ urlpatterns = [
     
     path('qabul-hujjat-topshirish',q2024, name='q2024'),
     path('qabul-hujjat-topshirish/natija/<int:pk>/',q2024info, name='q2024info'),
+    path('qabul-hujjat-topshirish/natija/',q2024list, name='q2024list'),
     path('qabul-hujjat-topshirish/<int:pk>/success/', q2024Success, name='q2024Success'),
   
   
@@ -34,6 +35,14 @@ urlpatterns = [
    
     path('elonlar/',elon,name='elon'),
     path('elon/<int:pk>/',elon_detail,name='ArticleElon_detail'),
+    
+    path('Axborot-xizmati/',ax,name='ax'),
+    path('live/',video,name='video'),
+    
+    path('create-korupsiya-article/', create_korupsiya_article, name='create_korupsiya_article'),
+    path('delete-korupsiya-article/<int:pk>/', delete_korupsiya_article, name='delete_korupsiya_article'),
+    path('korupsiya/<int:pk>/', korupsiya_detail, name='korupsiya_detail'),
+
     
     
     path('institut',institut, name='institut'),
@@ -206,8 +215,12 @@ urlpatterns = [
     path('Moliyaviy-faoliyat/pageMF5', pageMF5, name="pageMF5"),
     path('Moliyaviy-faoliyat/pageMF6', pageMF6, name="pageMF6"),
     path('Moliyaviy-faoliyat/pageMF7', pageMF7, name="pageMF7"),
+    ###################################
+    path('Korupsiya-faoliyat/', korupsiyaFaoliyat, name="korupsiyaFaoliyat"),
+    path('Korupsiya-faoliyat/pageKF1', pageKF1, name="pageKF1"),
+    path('Korupsiya-faoliyat/pageKF2', pageKF2, name="pageKF2"),
     
-    
+    ####################################
     path('callCenter/', callCenter, name="callCenter"),
     path('bakalavr/', bakalavr, name="bakalavr"),
     path('bakalavr/qabul/pageBak1', pageBak1, name="pageBak1"),

@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.views import View
-from .forms import ArticleElonForm, ArticleNewsForm, Qabul24Form
+from .forms import ArticleElonForm, ArticleNewsForm, Qabul24Form, KorupsiyaForm
 from .models import *
 from django.conf import settings
 from django.utils import translation
@@ -36,6 +36,9 @@ def q2024(request):
     return render(request,'qabul2024/q2024.html', {'form': form})
 
 
+def q2024list(request):
+    q2024 = ArticleQabul2024.objects.all()
+    return render(request, 'qabul2024/q2024-info.html', {'q2024': q2024})
 
 
 def q2024info(request, pk):
@@ -155,7 +158,43 @@ def delete_article_elon(request, pk):
         article.delete()
         return redirect('home')  # Muvaffaqiyatli o'chirilgandan so'ng foydalanuvchini kerakli URLga yo'naltirish
     return render(request, 'users/delete_article_elon.html', {'article': article})
+################################################################################################
+################################################################################################
 
+def video(request):
+    return render(request,'news/video.html')
+
+
+# Korupsiya
+from .forms import KorupsiyaForm
+from .models import Korupsiya
+
+def create_korupsiya_article(request):
+    korupsiya = Korupsiya.objects.all()  # Barcha korupsiya obyektlarini olish
+    if request.method == 'POST':
+        form = KorupsiyaForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')  # Kerakli URL manzilga yo'naltirish
+    else:
+        form = KorupsiyaForm()
+    
+    context = {
+        'korupsiya': korupsiya,
+        'form': form,
+    }
+    return render(request, 'users/create_korupsiya_article.html', context)
+
+
+################################################################################################
+################################################################################################
+# delete koruptions
+def delete_korupsiya_article(request, pk):
+    article = get_object_or_404(Korupsiya, pk=pk)
+    if request.method == 'POST':
+        article.delete()
+        return redirect('home')  # O'chirishdan keyin kerakli URLga yo'naltirish
+    return render(request, 'users/delete_korupsiya_article.html', {'article': article})
 
 
 ################################################################################################
@@ -214,6 +253,10 @@ def update_article_news(request, pk):
         form = ArticleNewsForm(instance=article)
     return render(request, 'users/update_article_news.html', {'form': form})
 
+
+def ax(request):
+    return render(request,'news/axborot-xizmati.html')
+    
 def update_article_elon(request, pk):
     article = get_object_or_404(ArticleElon, pk=pk)
     if request.method == 'POST':
@@ -739,6 +782,27 @@ def pageMF6(request):
 
 def pageMF7(request):
     return render(request,'faoliyat/moliyaviy-faoliyat/page-mf7.html')
+
+
+################################################################################################
+################################################################################################
+
+def korupsiyaFaoliyat(request):
+    articles = Korupsiya.objects.all()  # O'zgaruvchi nomini 'articles' deb o'zgartirdik
+    return render(request, 'faoliyat/korupsiya/korupsiya.html', {'korupsiya': articles})  # kalit nomi 'korupsiya'
+
+def korupsiya_detail(request, pk):
+    article = get_object_or_404(Korupsiya, pk=pk)
+    return render(request, 'korupsiya/korupsiya_copy.html', {'item': article})
+
+def pageKF1(request):
+    return render(request,'faoliyat/korupsiya/page-kf1.html')
+
+def pageKF2(request):
+    return render(request,'faoliyat/korupsiya/page-kf2.html')
+
+
+
 
 
 ################################################################################################
