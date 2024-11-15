@@ -12,8 +12,14 @@ SECRET_KEY = 'django-insecure-zqg*j(ujh*7hloqm2k6u+!eeu-9)7vbmfs)jpwhu-*!#s9gpa2
 
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['jizpi.uz','195.158.14.142',"*",'127.0.0.1', 'localhost']
 CSRF_TRUSTED_ORIGINS = ['https://jizpi.uz', 'http://jizpi.uz']
+=======
+ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = ['https://jizpi.uz', 'https://www.jizpi.uz']
+
+>>>>>>> 1bd99b60292c88d1ab4ca5bc0d1938517bb0cc12
 
 
 # Application definition
@@ -27,6 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'rosetta',
+    
+    
 ]
 
 MIDDLEWARE = [
